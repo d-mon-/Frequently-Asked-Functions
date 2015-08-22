@@ -20,7 +20,8 @@ function isValidColorInteger(v){
  */
 function rgb2hex (r,g,b){
     if(isValidColorInteger(r)&&isValidColorInteger(g)&&isValidColorInteger(b)){
-        return(16777216+(r<<16)+(g<<8)+b).toString(16).slice(1)
+        //  return ("00000"+((r<<16)+(g<<8)+b).toString(16)).slice(-6); //also work
+        return(16777216+(r<<16)+(g<<8)+b).toString(16).slice(1);
     }else{
         return false;
     }
@@ -36,7 +37,8 @@ function rgb2hex (r,g,b){
 function rgba2hex (r,g,b,a){
     if(isValidColorInteger(a)&&isValidColorInteger(r)&&isValidColorInteger(g)&&isValidColorInteger(b)){
         //(a<<24)>>>0 return an unsigned integer
-        return(4294967296+((a<<24)>>>0)+(r<<16)+(g<<8)+b).toString(16).slice(1)
+        //  return ("0000000"+(((a<<24)>>>0)+(r<<16)+(g<<8)+b).toString(16)).slice(-8); //also work
+        return(4294967296+((a<<24)>>>0)+(r<<16)+(g<<8)+b).toString(16).slice(1);
     }else{
         return false;
     }
