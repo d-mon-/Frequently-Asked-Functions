@@ -2,10 +2,6 @@
  * Created by GUERIN Olivier, on 21/08/2015.
  * Twitter: @MisterRaton
  */
-/**
- * Created by GUERIN Olivier, on 21/08/2015.
- * Twitter: @MisterRaton
- */
 
 /**
  * convert hexadecimal colors (FFFFFF) into rgb *
