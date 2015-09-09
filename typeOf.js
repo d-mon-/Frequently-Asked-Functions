@@ -7,7 +7,7 @@ function typeOf(value){
         if(value.constructor.name!==undefined){
             return value.constructor.name;
         }else{
-            return (value.constructor.toString()).match(/^\w{8}\s+([\w\$]+)\s*(?=\()/)[1];
+            return (value.constructor.toString()).match(/\s+([\w\$]+)\s*(?=\()/)[1];
         }
     }
     if(typeof value ==="number" && isNaN(value)){
