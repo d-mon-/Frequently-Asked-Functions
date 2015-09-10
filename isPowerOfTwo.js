@@ -12,13 +12,11 @@ function isPowerOf2(value) {
 }
 
 function isPowerOfTwo(value) {
-    return (value === nearestPowerOf2(value, 2));
+    return isPowerOfN(value, 2);
 }
 
-function nearestPowerOf2(value) {
-    return nearestPowerOfN(value, 2)
-}
-
-function nearestPowerOfN(value, N) {
-    return Math.pow(N, Math.round(Math.log(value) / Math.log(N)));
+//Math.round is very important here
+//otherwise isPowerOfN(13, 3) would return true
+function isPowerOfN(value, N) {
+    return value === Math.pow(N, Math.round(Math.log(value) / Math.log(N)));
 }
