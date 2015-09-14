@@ -3,15 +3,13 @@
  * Twitter: @MisterRaton
  */
 function typeOf(value) {
-    if (typeof value === "number" && isNaN(value)) {
-        return "NaN";
+    if (typeof value === "number" && isNaN(value)) return "NaN";
+    if (value === null) return 'Null';
+    if (value === undefined) return 'Undefined';
+    if (value.constructor.name !== undefined) {
+        return value.constructor.name;
+    } else {
+        var constructorString = value.constructor.toString();
+        return constructorString.slice(9,constructorString.indexOf('('));
     }
-    if ((typeof value === 'object' && value !== null) || (typeof value === "function" && value.constructor.name === 'GeneratorFunction')) {
-        if (value.constructor.name !== undefined) {
-            return value.constructor.name;
-        } else {
-            return (value.constructor.toString()).match(/\s+([\w\$]+)\s*(?=\()/)[1];
-        }
-    }
-    return Object.prototype.toString.call(value).slice(8, -1);
 };
